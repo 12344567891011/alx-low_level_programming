@@ -1,23 +1,32 @@
 #include "main.h"
+
 /**
- * cap_string - function
- * @str: pointer
- * Return: char value
+ * cap_string - char function
+ * @c: input value
+ * Description: cap string
+ * Return: value
  */
-char *cap_string(char *str)
+
+char *cap_string(char *s)
 {
-	int i;
-	i = 0;
-	while (str[i] != '\0')
+	int i, j, f;
+	char s_chars[] = {' ', '\n', '\t', '.', ';', '!', '?', '"', '(', ',', ')', '{', '}', };
+
+	while (s[i] != '\0')
 	{
-		if (i == 0 && str[i] < 123 && str[i] > 96)
-			str[i] = str[i] - 32;
-		if (str[i] == '\t' || str[i] == '\n' || str[i] == ' ' || str[i] == ',' || str[i] == ';' || str[i] == '.' || str[i] == '!' || str[i] == '?' || str[i] == '"' || str[i] == '(' || str[i] == ')' || str[i] == '{' || str[i] == '}')
-		{
-			if (str[i + 1] < 123 && str[i + 1] > 96)
-				str[i + 1] = str[i + 1] - 32;
-		}
 		i++;
 	}
-	return (str);
+	for (j = 0; j < i; j++)
+	{
+		for (f = 0; f < 13; f++)
+		{
+			if (s[j] == s_chars[f]){
+				if (s[j + 1] >= 'a' && s[j + 1] <= 'z')
+				{
+					s[j + 1] -= 32;
+				}
+			}
+		}
+	}
+	return (s);
 }
