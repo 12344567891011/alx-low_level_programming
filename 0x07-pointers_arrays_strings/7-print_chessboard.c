@@ -1,12 +1,10 @@
 #include "main.h"
-
 /**
- * print_chessboard - void func
- * @a: array input
- * Description: print the chessboard
- * Return: value
+ * print_chessboard - void function
+ * @a: str
+ * Description: prints the chessboard
+ * Return: nothing.
  */
-
 void print_chessboard(char (*a)[8])
 {
 	int i, j;
